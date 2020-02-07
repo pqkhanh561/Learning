@@ -1,0 +1,29 @@
+#Install docker
+#Docker pull
+    docker pull spmallick/opencv-docker:opencv
+
++ Set sudo default for docker command
+    https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+
+
+
+#INSTALLED DOCKER
+_Run docker opencv file
+docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 5000:5000 -p 8888:8888 -it spmallick/opencv-docker:opencv /bin/bash
+
+    Note: -p is set to port forwarding
+
+_ Activate env: workon OpenCV-3.4.3-py3
+
++ Using py3, opencv 3.4.3
+
+!Problem in running jupyter notebook
+    1. Cannot run web outside the docker while running "docker run -p  5000:5000"
+
+
+!No display show
+    Give docker the rights to access the X-server: xhost +local:docker
+
+#GIVE SSH access to containers
+    Is it need?
+    Solution: Using github instead
